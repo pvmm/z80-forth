@@ -6,6 +6,11 @@ set blkfiles [read $fd]
 # Wait for boot message "BOOT COMPLETED"
 #
 
+proc boot {} {
+  message "booting"
+  wait_boot call_forth83
+}
+
 proc wait_boot {{cmd ""}} {
   if {[string first "BOOT COMPLETED" [get_screen]] >= 0} {
     message "*match*"
@@ -103,9 +108,9 @@ proc replace_autoexec {} {
 proc reset_speed {} {
   global speed
   message "value = $::wp_last_value"
-  if {$::wp_last_value == 65} {
-    set speed 100
-  }
+  #if {$::wp_last_value == 65} {
+  set speed 100
+  #}
 }
 
 proc done {} {
@@ -114,7 +119,9 @@ proc done {} {
 }
 
 #set renderer none
-machine C-BIOS_MSX2+
+#machine C-BIOS_MSX2+
+machine Sony_HB-F1XV
+ext ram4mb
 ext ide
 
 set power off
@@ -135,4 +142,5 @@ ext debugdevice
 debug set_watchpoint write_io {0x2f} {} {reset_speed}
 
 message "Detecting boot..."
-wait_boot call_forth83
+after time 10 boot
+

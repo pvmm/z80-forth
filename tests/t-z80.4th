@@ -281,10 +281,10 @@ hex z/code (as)
 >< DE     HL  ADD
 >< HL     HL  ADD
 >< SP     HL  ADD
->< BC     IX  ADD \ *
+>< BC     IX  ADD
 >< DE     IX  ADD
 >< IX     IX  ADD
->< SP     IX  ADD \ *
+>< SP     IX  ADD
 >< BC     IY  ADD
 >< DE     IY  ADD
 ----
