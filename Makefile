@@ -4,6 +4,8 @@ COMMIT=d3d42fc743ab30e3775b6b6a95431a24fd3d1b22
 
 .PHONY: all test dsk clean create update
 all: update
+	cp compile.tcl msx-forth83/
+	cp dsk/* msx-forth83/dsk
 	cp src/*.4th ${DEST}/src
 	make -C ${DEST} all
 
