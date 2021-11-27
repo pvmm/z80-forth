@@ -1,2 +1,2 @@
-Z80 assembler programming inside Forth-83
-=========================================
+Z80 programming on Forth-83
+===========================

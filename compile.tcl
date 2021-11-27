@@ -1,6 +1,5 @@
 set fd [open "./blkfiles" "r"]
 set blkfiles [read $fd]
-#set blkfiles [list shift.blk msxbios.blk vt52.blk grp.blk debug.blk psg.blk vtx1.blk vgr1.blk]
 
 #
 # Wait for boot message "BOOT COMPLETED"
