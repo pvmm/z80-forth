@@ -23,11 +23,13 @@ update: create
 	cd msx-forth83
 	${GIT} submodule update
 
-create: msx-forth83
+create: msx-forth83 files
 
 msx-forth83:
-	@mkdir -p msx-forth83
-	@cd msx-forth83
+	mkdir -p msx-forth83
 	${GIT} submodule init
 	${GIT} submodule update
+
+files:
 	cp dsk/* msx-forth83/dsk
+
