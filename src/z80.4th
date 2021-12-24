@@ -12,6 +12,8 @@ context @ avoc !
 \ z/code is Z80 version of CODE
 : z/code  create hide here dup 2- ! context @ avoc ! z80 ;
 ----
+WARNING OFF
+----
 \ set Z80 context
 z80 definitions hex
 
@@ -164,6 +166,8 @@ variable firstparam -1 firstparam !
     swap then
  ?ixy not if abort" IX/IY register expected" then
  opr>r join >opr >I< ;
+----
+WARNING ON
 ----
 \ opcode type (inherited from 8080 and extended)
 : 1MI  create C, does> C@ C, !reset ;
